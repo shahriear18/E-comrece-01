@@ -11,50 +11,59 @@ function AutoPlay() {
     autoplay: true,
     speed: 200,
     autoplaySpeed: 4000,
-    cssEase: "linear"
+    cssEase: "linear",
   };
+  let sliderimg = [
+    {
+      img: "banerslider1.png",
+    },
+    {
+      img: "banerslider2.jpeg",
+    },
+    {
+      img: "banerslider3.png",
+    },
+    {
+      img: "banerslider4.png",
+    },
+    {
+      img: "banerslider5.jpeg",
+    },
+    {
+      img: "banerslider6.png",
+    },
+    {
+      img: "banerslider7.png",
+    },
+    {
+      img: "banerslider8.jpeg",
+    },
+    {
+      img: "banerslider9.png",
+    },
+    {
+      img: "banerslider10.jpeg",
+    },
+    {
+      img: "banerslider11.png",
+    },
+    {
+      img: "banerslider12.png",
+    },
+    {
+      img: "banerslider13.png",
+    }
+  ];
   return (
-    <div className="slider-container w-[900px] mt-[20px] ">
+    <div className="slider-container w-[900px] mt-[20px] ml-[40px] ">
       <Slider {...settings}>
-        <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider1.png" alt="" />
+        {
+          sliderimg.map((item , i) =>(
+        <div key={i} className=" h-[440px]">
+          <img className="rounded-[5px]" src={item.img} alt="" />
         </div>
-                <div className=" h-[470px]">
-          <img className="rounded-[5px]" src="banerslider2.jpeg" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider3.png" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider4.png" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider5.jpeg" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider6.png" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider7.png" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider8.jpeg" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider9.png" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider10.jpeg" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider11.png" alt="" />
-        </div>
-                <div className="  h-[440px]">
-          <img className="rounded-[5px]" src="banerslider12.png" alt="" />
-        </div>
-                <div className=" h-[440px]">
-          <img className="rounded-[5px]" src="banerslider13.png" alt="" />
-        </div>
+          ))
+        }
       </Slider>
     </div>
   );

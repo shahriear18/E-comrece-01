@@ -60,3 +60,25 @@
     background: url(../public/baner11.jpeg);
     background-size: cover;
 }
+/* .baner-right-img1{
+    background: url(../public/baner13.gif);
+    background-size: cover;
+}
+.baner-right-img2{
+    background: url(../public/baner14.jpeg);
+    background-size: cover;
+    background-position: bottom;
+    background: url(../public/baner15.jpeg);
+    background: url(../public/baner16.jpeg);
+} */
+ .recomendedul li:hover::after{
+    content: "";
+    animation: undelinesplit;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+ }
+ @keyframes undelinesplit{
+    100%{
+        width: 100px;
+    }
+ }

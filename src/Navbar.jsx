@@ -11,7 +11,7 @@ const Navbar = () => {
             </div>
             <div className=" flex items-center h-[60px]">
               {" "}
-              <i class="fa-solid fa-magnifying-glass text-[#742ff5] absolute ml-[10px]"></i>{" "}
+              <i className="fa-solid fa-magnifying-glass text-[#742ff5] absolute ml-[10px]"></i>{" "}
               <input
                 className="py-[10px] bg-[white] w-[600px] px-[40px] text-[black] outline-none placeholder:text-[14px] rounded-[5px]"
                 type="text"
@@ -37,11 +37,11 @@ const Navbar = () => {
               </div>
               <div className="flex  items-center justify-center gap-[20px] text-[white] ml-[80px]">
                 <div className="grid items-center ">
-                  <i class="fa-regular fa-heart text-[20px] ml-[8px]"></i>
+                  <i className="fa-regular fa-heart text-[20px] ml-[8px]"></i>
                   <p className="text-[13px]">Wishlist</p>
                 </div>
                 <div className="grid items-center justify-center">
-                  <i class="fa-solid fa-cart-shopping text-[20px] ml-[-2px]"></i>
+                  <i className="fa-solid fa-cart-shopping text-[20px] ml-[-2px]"></i>
                   <p className=" after:content-['0'] after:absolute after:w-[20px] after:h-[20px] after:bg-[#0084ff] after:rounded-[50px] after:items-center after:justify-center after:flex after:mt-[-50px] after:ml-[10px] after:font-[700]  text-[13px] before:content-[''] before:absolute before:h-[40px] before:w-[1px] before:bg-[#ffffff] before:ml-[-100px] before:mt-[-20px]"  >Cart</p>
                 </div>
               </div>
