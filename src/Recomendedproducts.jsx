@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Recomendedproducts = () => {
   const [activeTab, setActiveTab] = useState("featured");
+
   const settings = {
     infinite: true,
     slidesToShow: 5,
@@ -15,14 +16,17 @@ const Recomendedproducts = () => {
     autoplaySpeed: 4000,
     cssEase: "linear",
   };
+
   const tabs = [
-    { id: "featured", label: "Featured", color: "bg-[white]" },
-    { id: "new", label: "New Arrivals", color: "bg-[#5eff00]" },
-    { id: "top", label: "Top Rated", color: "bg-[#0077ff]" },
-    { id: "best", label: "Best Seller", color: "bg-[#ae00ff]" },
+    { id: "featured", label: "Featured" },
+    { id: "new", label: "New Arrivals" },
+    { id: "top", label: "Top Rated" },
+    { id: "best", label: "Best Seller" },
   ];
-  let feacherd = [
-    {
+
+  // 🧩 আলাদা আলাদা product list
+  const featured = [
+        {
       img: "featured1.jpeg",
       name: "Winter style Raincoat",
       review: "5",
@@ -150,9 +154,40 @@ const Recomendedproducts = () => {
     },
   ];
 
+  const newArrivals = [
+    { img: "new1.jpeg", name: "New Arrival Hoodie", review: "5", price: "980", discount: "1300" },
+    { img: "new2.jpeg", name: "Winter Hat", review: "4", price: "400", discount: "650" },
+  ];
+
+  const topRated = [
+    { img: "top1.jpeg", name: "Top Rated Sweater", review: "5", price: "1200", discount: "1500" },
+    { img: "top2.jpeg", name: "Warm Jacket", review: "5", price: "1500", discount: "1800" },
+  ];
+
+  const bestSeller = [
+    { img: "best1.jpeg", name: "Best Seller Coat", review: "5", price: "1900", discount: "2200" },
+    { img: "best2.jpeg", name: "Classic Hoodie", review: "5", price: "1100", discount: "1400" },
+  ];
+
+  // 🧠 Active tab অনুযায়ী কোন list দেখাবে
+  const getActiveProducts = () => {
+    switch (activeTab) {
+      case "featured":
+        return featured;
+      case "new":
+        return newArrivals;
+      case "top":
+        return topRated;
+      case "best":
+        return bestSeller;
+      default:
+        return featured;
+    }
+  };
+
   return (
     <div className="container">
-      <div className="bg-[#b1b1b1]">
+      <div className="bg-[#b1b1b1] pb-[80px]">
         <h2 className="text-[23px] font-[600] text-center mt-[40px]">
           Recommended For You
         </h2>
@@ -168,8 +203,7 @@ const Recomendedproducts = () => {
                 ${activeTab === tab.id ? "text-[#0066ff] after:w-full" : ""}
                 after:content-[''] after:block after:h-[2px] after:bg-[#0066ff] after:transition-all after:duration-300
                 ${activeTab === tab.id ? "after:w-full" : "after:w-0"}
-                after:mx-auto after:mt-[5px]
-                `}
+                after:mx-auto after:mt-[5px]`}
               >
                 {tab.label}
               </li>
@@ -178,50 +212,34 @@ const Recomendedproducts = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="mt-[40px] relative h-[650px]">
-          {tabs.map((tab) => (
-            <div
-              key={tab.id}
-              className={`absolute inset-0 transition-opacity duration-500 ${
-                tab.color
-              } ${
-                activeTab === tab.id
-                  ? "opacity-100"
-                  : "opacity-0 pointer-events-none"
-              }`}
-            >
-              <Slider {...settings}>
-                {feacherd.map((item, i) => (
-                  <div key={i} className=" h-[350px] bg-[] w-[250px]">
-                    <div className=" flex justify-center">
-                      <img className=" h-[250px]" src={item.img} alt="" />
-                      <div className=" absolute h-[50px] w-[50px] bg-[red] ml-[150px] mt-[20px] rounded-full">
-                        <img src="discountsticker.avif" alt="" />
-                      </div>
-                    </div>
-                    <div className=" ml-[25px]">
-                      <p className=" text-[15px]">{item.name}</p>
-                    <div className=" flex items-center gap-2">
-                      <div className=" flex">
-                        <CiStar />
-                        <CiStar />
-                        <CiStar />
-                        <CiStar />
-                        <CiStar />
-                      </div>
-                      <p className=" text-[#5e5c5c]">{`( ${item.review} review )`}</p>
-                    </div>
-                    <div className=" flex font-[700] text-[15px] gap-5 mt-[5px]">
-                      <p>TK {item.prise}</p>
-                      <del className=" text-[#aaa9a9]">TK {item.discount}</del>
-                    </div>
-                    </div>
-                    
+        <div className="mt-[40px]">
+          <Slider {...settings}>
+            {getActiveProducts().map((item, i) => (
+              <div key={i} className="h-[350px] w-[250px]">
+                <div className="flex justify-center relative">
+                  <img className="h-[250px]" src={item.img} alt="" />
+                  <div className="absolute h-[50px] w-[50px] bg-[red] right-[20px] top-[20px] rounded-full overflow-hidden">
+                    <img src="discountsticker.avif" alt="" />
                   </div>
-                ))}
-              </Slider>
-            </div>
-          ))}
+                </div>
+                <div className="ml-[25px]">
+                  <p className="text-[15px]">{item.name}</p>
+                  <div className="flex items-center gap-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <CiStar key={i} />
+                      ))}
+                    </div>
+                    <p className="text-[#5e5c5c]">{`( ${item.review} review )`}</p>
+                  </div>
+                  <div className="flex font-[700] text-[15px] gap-5 mt-[5px]">
+                    <p>TK {item.price}</p>
+                    <del className="text-[#aaa9a9]">TK {item.discount}</del>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </div>
@@ -229,3 +247,4 @@ const Recomendedproducts = () => {
 };
 
 export default Recomendedproducts;
+
