@@ -7,6 +7,9 @@ import Bigbanners from "./Bigbanners";
 import TrendingProducts from "./TrendingProducts";
 import Poster from "./Poster";
 import Recomendedproducts from "./Recomendedproducts";
+import Topweeklybrands from "./Topweeklybrands";
+import Brands from "./Brands";
+import Apppromotion from "./Apppromotion";
 
 const Home = () => {
   return (
@@ -107,6 +110,9 @@ const Home = () => {
       <TrendingProducts/>
       <Poster/>
       <Recomendedproducts/>
+      <Topweeklybrands/>
+      <Brands/>
+      <Apppromotion/>
     </div>
   );
 };

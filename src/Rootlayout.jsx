@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Rootlayout = () => {
   return (
     <>
       <Navbar/>
       <Outlet />
-      <h2>Footer</h2>
+      <Footer/>
     </>
   );
 };

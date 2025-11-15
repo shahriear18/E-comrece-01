@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <header className="h-[60px] bg-[#0841ff94]">
+      <header className="h-[60px] bg-[#0841ff94] sticky top-0">
         <div className="container">
           <nav className="flex items-center h-[60px] justify-between">
             <div>
@@ -22,7 +22,7 @@ const Navbar = () => {
               <div className="flex gap-[15px] items-center">
                 <div className="">
                   <i className="text-[white] fa-solid fa-user  text-[13px]"></i>
-                  <a className="text-[white] text-[13px] " href="">
+                  <a className="text-[white] text-[13px] " href="/signin">
                     Sign in
                   </a>
                   <p className=" absolute text-[white] ml-[61px] mt-[-25px]">
