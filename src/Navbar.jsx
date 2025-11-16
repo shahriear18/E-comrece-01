@@ -30,7 +30,7 @@ const Navbar = () => {
                   </p>
                 </div>
                 <div>
-                  <a className="text-[white]  text-[13px] " href="">
+                  <a className="text-[white]  text-[13px] " href="/register">
                     Register
                   </a>
                 </div>
