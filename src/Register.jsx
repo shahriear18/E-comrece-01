@@ -1,4 +1,7 @@
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import React, { useState } from "react";
+import { auth } from "./Firebase.config";
+
 
 const Register = () => {
   let [type, settype] = useState(false);
@@ -8,19 +11,52 @@ const Register = () => {
   let [err3, seterr3] = useState(false);
   let [ckemail, setckemail] = useState(true);
   let [loader, setloader] = useState(false);
-
-  let handelfirstname = () =>{
-    
-  }
-  let handellastname = () =>{
-
-  }
-  let handelemail = () =>{
-
-  }
-  let handelpass = () =>{
-
-  }
+  let [info, setinfo] = useState({
+    firstname: "",
+    lastname: "",
+    mail: "",
+    pass: "",
+  });
+      let handelfirstname = (e) => {
+    const val = e.target.value;
+    setinfo((prev) => ({
+      ...prev,
+      firstname: val,
+    }));
+    if (val.trim() !== "") {
+      seterr(false);
+    }
+  };
+  let handellastname = (e) => {
+    const val = e.target.value;
+    setinfo((prev) => ({
+      ...prev,
+      lastname: e.target.value,
+    }));
+    if (val.trim() !== "") {
+      seterr1(false);
+    }
+  };
+  let handelemail = (e) => {
+    const val = e.target.value;
+    setinfo((prev) => ({
+      ...prev,
+      mail: e.target.value,
+    }));
+    if (val.trim() !== "") {
+      seterr2(false);
+    }
+  };
+  let handelpass = (e) => {
+    const val = e.target.value;
+    setinfo((prev) => ({
+      ...prev,
+      pass: e.target.value,
+    }));
+    if (val.trim() !== "") {
+      seterr3(false);
+    }
+  };
   let handlesignin = () =>{
     setloader(true);
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(info.mail)) {
@@ -67,7 +103,7 @@ const Register = () => {
               })
               .catch((error) => {});
             setloader(false);
-            navigate("/login");
+            Navigate("/login");
           });
         })
         .catch((error) => {
@@ -84,11 +120,12 @@ const Register = () => {
 
   return (
     <div>
+      {/* <Toaster position="top-center" reverseOrder={false} /> */}
       <div>
-        {/* <div
+      <div
         className=" absolute h-[640px] bg-[#ffffff25] w-[100%] z-10 backdrop-blur-[8px] "
         role="status"
-        // style={{ display: loader ? "block" : "none" }}
+        style={{ display: loader ? "block" : "none" }}
       >
         <svg
           aria-hidden="true"
@@ -107,7 +144,7 @@ const Register = () => {
           />
         </svg>
         <span className="sr-only">Loading...</span>
-      </div> */}
+      </div>
 
         <div className="h-[641px] bg-[#101828]  grid items-center justify-center">
           <h1 className="text-[white] mt-[-30px] font-[600] text-[30px]  ml-[40px] relative rotate-[0.2deg]">
