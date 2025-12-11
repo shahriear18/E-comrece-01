@@ -10,13 +10,18 @@ import Recomendedproducts from "./Recomendedproducts";
 import Topweeklybrands from "./Topweeklybrands";
 import Brands from "./Brands";
 import Apppromotion from "./Apppromotion";
+import { useNavigate } from "react-router";
 
 const Home = () => {
+  let navigate = useNavigate()
+  let handleglobalfinds = () =>{
+    navigate("/global-finds")
+  }
   return (
     <div>
       <div className="container">
         <div className=" flex justify-between mt-[20px] baner-sections">
-          <div className=" grid justify-center items-center ">
+          <div onClick={handleglobalfinds} className=" grid justify-center items-center ">
             <div className="h-[90px] w-[90px] bg-[red] rounded-[50px]"></div>
             <p className=" text-[12px] font-[400]  mt-[10px] w-[100px]">
               GLOBAL FINDS
@@ -103,16 +108,16 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <DeliveryOption/>
-      <Afterbaneradd/>
-      <Hotdealsslider/>
-      <Bigbanners/>
-      <TrendingProducts/>
-      <Poster/>
-      <Recomendedproducts/>
-      <Topweeklybrands/>
-      <Brands/>
-      <Apppromotion/>
+      <DeliveryOption />
+      <Afterbaneradd />
+      <Hotdealsslider />
+      <Bigbanners />
+      <TrendingProducts />
+      <Poster />
+      <Recomendedproducts />
+      <Topweeklybrands />
+      <Brands />
+      <Apppromotion />
     </div>
   );
 };

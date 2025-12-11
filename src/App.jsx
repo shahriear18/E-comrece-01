@@ -6,6 +6,7 @@ import Login from "./Register";
 import Rootlayout from "./Rootlayout";
 import Register from "./Register";
 import signin from "./Signup";
+import Globalfinds from "./Global-finds";
 const App = () => {
   let router = createBrowserRouter([
     {
@@ -14,6 +15,7 @@ const App = () => {
       children: [
         { index: true, Component: Home },
         { path: "about", Component: About },
+        { path: "global-finds", Component: Globalfinds },
       ],
     },
     {
