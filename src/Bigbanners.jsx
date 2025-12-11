@@ -25,12 +25,12 @@ const Bigbanners = () => {
       <div className=" mt-[70px] ">
         <div className=" flex ">
           {bigbannerimgs1.map((item, i) => (
-            <img className=" w-[630px] rounded-[10px]" src={item.img} alt="" />
+            <img key={i} className=" w-[630px] rounded-[10px]" src={item.img} alt="" />
           ))}
         </div>
         <div className=" flex mt-[30px] gap-7">
           {bigbannerimgs2.map((item, i) => (
-            <img className=" w-[400px] rounded-[10px]" src={item.img} alt="" />
+            <img key={i} className=" w-[400px] rounded-[10px]" src={item.img} alt="" />
           ))}
         </div>
       </div>

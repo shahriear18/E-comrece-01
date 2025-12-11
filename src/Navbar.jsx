@@ -1,6 +1,7 @@
 import React from "react";
 
 const Navbar = () => {
+  
   return (
     <div>
       <header className="h-[60px] bg-[#0841ff94] sticky top-0">
