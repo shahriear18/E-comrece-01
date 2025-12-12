@@ -137,7 +137,7 @@ const Navbar = () => {
             marginTop: showprofile ? "0px" : "-460px",
             transition: "0.3s ease-in-out",
           }}
-          className="shadow-2xl shadow-black/50 h-[400px] w-[350px] absolute right-0 p-[10px] rounded-lg backdrop-blur-md bg-[#ffffff77]"
+          className="z-50 shadow-2xl shadow-black/50 h-[400px] w-[350px] absolute right-0 p-[10px] rounded-lg backdrop-blur-md bg-[#ffffff77]"
         >
           <div className=" flex items-center ml-[20px] gap-3">
             <div className=" h-[70px] w-[70px] rounded-full overflow-hidden">
